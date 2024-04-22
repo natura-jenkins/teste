@@ -1,0 +1,37 @@
+name: Deployment Multiples Environment
+
+on:
+  workflow_call:
+    inputs:
+      target-env:
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    name: Deploy to ${{ inputs.target-env }}
+    permissions:
+      contents: none
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ inputs.target-env }}
+
+    steps:
+      - run: echo "🎉 target evn ${{ inputs.target-env}}"
+      - run: echo "🎉 target evn inputs.target-env"
+      - run: echo "🍏 is Dev  ${{ inputs.target-env }} == 'Development'"
+      - run: echo "🐧 is Prod  ${{ inputs.target-env }} == 'Production'"
+
+      - name: Download artifact from build job
+        run: echo "Download artifact from build job"
+
+      - name: unzip artifact for deployment
+        run: echo "unzip artifact for deployment"
+
+      - name: "Deploy to ${{ inputs.target-env }}"
+        if:  inputs.target-env == 'Development'
+        id: deploy-to-dev
+        run: echo "Deploy to Dev"
+
+      - name: "Deploy to ${{ inputs.target-env }}"
+        run: echo "Deploy to ${{ inputs.target-env }}"

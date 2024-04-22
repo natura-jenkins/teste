@@ -1,0 +1,17 @@
+name: nodejs
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  workflow-nodejs:
+    uses: lucianobeja79/workflows-config/.github/workflows/nodejs.yml@main
+    with:
+      name: 'workflow-app'
+

@@ -1,0 +1,16 @@
+name: workflow-app
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  workflow-deploy:
+    uses: lucianobeja79/workflow-deploy/.github/workflows/kubernetes.yml@main
+    with:
+      name: 'workflow-app'
