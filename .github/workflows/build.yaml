@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Use Node.js 
-      run: echo "Using Node.js 
+      run: echo "Using Node.js"
         
     - name: npm install, build, and test
       run: echo "npm install, build, and test"
