@@ -3,7 +3,7 @@ name: Build Artifact and Deploy
 on:
   push:
     branches:
-      - dev
+      - main
 
   workflow_dispatch:
     inputs:
