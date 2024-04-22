@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  workflow_call:
+
+jobs:
+  Sonnar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Sonnar
+        run: echo "Teste"
+
+  Dependecy-Check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Dependecy-Check
+        run: echo "Teste"
+
+  Test-Unit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Test Unit
+        run: echo "Teste"
