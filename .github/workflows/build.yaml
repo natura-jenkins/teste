@@ -2,10 +2,6 @@ name: Build
 
 on:
   workflow_call:
-    inputs:
-      NODE_VERSION:
-        required: true
-        type: string
 
 jobs:
   build:
